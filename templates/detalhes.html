@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br" >
+     <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+        <!--IMPORTANDO O CDN DO BOOTSTRAP-->   
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" >
+        <!--IMPORTANDO O CDN DO BOOTSTRAP ICONS-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    </head>
+    
+    <body class="bg-secondary">
+        <div class="container-fluid">
+            <h1 class="text-white text-center" style="margin-top: 10px;">Mais Informações</h1>
+            <div class="row">
+                <div class="col-auto rounded mx-auto d-block img-fluid" style="margin-top: 40px;" >
+                    <div class="card text-center border-dark mb-3">
+                        <!--DADOS SÃO RETORNADOS DENTRO DO CARD-->
+                        <div class="card-header border-dark">
+                            <h2>Nome: {{autor.nome}}</h2>
+                        </div>
+                          <div class="card-body">
+                          <h3 class="card-title">CPF: {{autor.cpf}}</h3>
+                          <h3 class="card-title">Data de Nascimento: {{autor.data_nascimento}}</h3>
+                          <h3 class="card-title">Logradouro: {{autor.endereco.logradouro}} - Número: {{autor.endereco.numero}} -
+                            Complemento: {{autor.endereco.complemento}}</h3>
+                          <h3 class="card-title">Cidade: {{autor.endereco.cidade.nome}}</h3>
+                          <h3 class="card-title">Estado: {{autor.endereco.estado.nome}}</h3>
+                          <h3 class="card-title">País: {{autor.endereco.pais.nome}}</h3>
+                          <!--BOTÃO QUE REDIRECIONA PARA A TELA DE TODOS OS REGISTROS, ATRAVÉS DO ENDPOINT QUE FAZ O GET EM TODOS OS AUTORES-->
+                          <a href="{{url_for('get_autores_html')}}" class="btn btn-primary"><i class="bi bi-house-door-fill"></i> Voltar</a>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+
+         
+       
+        </div>
+
+      
+
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" ></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" ></script>
+
+    </body>
+
+</html>
